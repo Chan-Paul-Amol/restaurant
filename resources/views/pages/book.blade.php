@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'About')
+@section('title', 'book')
 
 @section('content')
 <section class="book_section layout_padding">
