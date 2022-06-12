@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/about', 'PagesController@about')->name('about');
-Route::get('/book', 'PagesController@book')->name('book');
-
-/*Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {
+    return view('index');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-*/
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [PagesController::class, 'about'])->name('about');
+Route::get('/book', [PagesController::class, 'book'])->name('book');
